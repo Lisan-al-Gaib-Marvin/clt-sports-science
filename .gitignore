@@ -1,0 +1,25 @@
+# Data — proprietary athlete data, do not commit
+data/
+*.xlsx
+*.xlsm
+*.csv
+!model_comparison.csv
+!requirements.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

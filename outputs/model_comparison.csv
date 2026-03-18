@@ -1,0 +1,3 @@
+Model,Test Accuracy,Test F1,CV F1 Mean,CV F1 Std
+Decision Tree,0.533,0.462,0.380,0.121
+Random Forest,0.600,0.400,0.321,0.177
