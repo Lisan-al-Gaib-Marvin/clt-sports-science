@@ -1,7 +1,7 @@
 # Sports Science Analytics Pipeline
 ### Collegiate Football Athlete Monitoring & Injury Risk Classification
 
-A full-stack data science project built with real sports performance data from a Division I football program. Covers the complete lifecycle from raw data ingestion through relational database design, exploratory analysis, and machine learning classification.
+Data science project built with real sports performance data from a Division I football program. Covers the complete lifecycle from raw data ingestion through relational database design, exploratory analysis, and machine learning classification.
 
 **Built by:** First-year Master's student, Data Science & Business Analytics (DSBA), UNC Charlotte
 
@@ -38,7 +38,7 @@ Raw Data (.csv, .xlsx, .xlsm) — 5 different platforms, 3 naming formats
 [1] ETL Script (Python)
     • Standardized "Last, First" → "First Last" naming across systems
     • Parsed asymmetry strings ("17.3 R" → numeric value + side)
-    • Resolved duplicate players (case-sensitivity: "DeQuinder" vs "Dequinder")
+    • Resolved duplicate players (case-sensitivity)
     • Cleaned junk rows, normalized dates/times
         │
         ▼
@@ -159,49 +159,17 @@ The Decision Tree was selected as the preferred model for this use case because 
 | Issue | Source | Resolution |
 |---|---|---|
 | Name format mismatch | TAP_GRIP uses "Last, First"; others use "First Last" | Standardized to "First Last" |
-| Double spaces in names | ForceDecks: "Chris  Rivens", "Takeo  Massey" | Collapsed to single space |
-| Spelling inconsistency | GPS: "Jaden Barnes" vs FD/NB: "Jayden Barnes" | Mapped to "Jayden Barnes" |
-| Case-sensitive duplicates | "DeQuinder" vs "Dequinder", "J'Ven" vs "J'ven" | Merged player IDs, reassigned data |
-| Test device entry | ForceDecks: "Niner Niner" | Filtered out |
+| Double spaces in names | ForceDecks: "John  Doe", "Jane  Doe" | Collapsed to single space |
+| Spelling inconsistency | GPS: "Johnny Doe" vs FD/NB: "John Doe" | Mapped to "John Doe" |
+| Case-sensitive duplicates | "DoE" vs "Doe", "J'Hon" vs "J'hon" | Merged player IDs, reassigned data |
+| Test device entry | ForceDecks: "Doe Doe" | Filtered out |
 | Header row in data | GPS: literal "Date" in session_date column | Filtered out |
 | Asymmetry string format | "17.3 R" as single field | Parsed to numeric (17.3) + side (R) |
-| pct_max_velocity overflow | Values >99.99999 exceeded DECIMAL(7,5) | Altered column to DECIMAL(8,5) |
+
+I used John Jane doe names to protect players
 
 ---
 
-## Repo Structure
-
-```
-sports-science-analytics/
-│
-├── README.md
-│
-├── notebooks/
-│   ├── 01_injury_risk.ipynb
-│   ├── 02_performance_profile.ipynb
-│   ├── 03_workload_monitor.ipynb
-│   ├── 04_correlation_analysis.ipynb
-│   └── 05_ml_classification.ipynb
-│
-├── sql/
-│   └── sports_science_schema.sql
-│
-├── etl/
-│   ├── build_import_xlsx.py
-│   └── load_to_mysql.py
-│
-├── outputs/                              # sample model outputs (no PII)
-│   ├── correlation_heatmap.png
-│   ├── decision_tree_visual.png
-│   ├── feature_importance.png
-│   ├── confusion_matrix.png
-│   └── model_comparison.csv
-│
-├── requirements.txt
-└── .gitignore
-```
-
----
 
 ## Technologies
 
@@ -212,7 +180,7 @@ sports-science-analytics/
 - **scikit-learn** — Decision Tree, Random Forest, cross-validation, evaluation metrics
 - **matplotlib + seaborn** — correlation heatmap, feature importance, confusion matrices
 - **Jupyter Notebooks** — interactive analysis and documentation
-- **Git / GitHub** — version control
+- **GitHub** — version control
 
 ---
 
@@ -233,3 +201,5 @@ sports-science-analytics/
 ## Author
 
 DSBA Master's Student, UNC Charlotte
+
+
