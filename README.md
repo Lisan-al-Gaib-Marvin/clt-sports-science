@@ -9,7 +9,6 @@ Data science project built with real sports performance data from a Division I f
 
 - [GitHub Repo](https://github.com/Lisan-al-Gaib-Marvin/clt-sports-science)
 - [Portfolio & Dashboards](https://pointed-aragon-330.notion.site/Data-Science-Analytics-4cbca0417d3241c58852a3d08856ed40?source=copy_link)
---
 
 ## Background
 
