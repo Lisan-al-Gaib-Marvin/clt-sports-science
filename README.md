@@ -8,8 +8,8 @@ Data science project built with real sports performance data from a Division I f
 > **Note:** The underlying dataset is proprietary and linked to an active collegiate football program. All player data has been excluded from this repository to protect athlete privacy. The notebooks, SQL schema, ETL scripts, and model outputs are included to demonstrate methodology and results.
 
 - [GitHub Repo](https://github.com/Lisan-al-Gaib-Marvin/clt-sports-science)
-- [Portfolio & Dashboards] https://pointed-aragon-330.notion.site/Data-Science-Analytics-4cbca0417d3241c58852a3d08856ed40?source=copy_link
----
+- [Portfolio & Dashboards](https://pointed-aragon-330.notion.site/Data-Science-Analytics-4cbca0417d3241c58852a3d08856ed40?source=copy_link)
+--
 
 ## Background
 
